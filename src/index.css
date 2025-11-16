@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 17% 97%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 270 90% 65%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 262 70% 95%;
+    --accent-foreground: 262 83% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
+
+    --gradient-dark-start: 222 47% 7%;
+    --gradient-dark-end: 220 47% 4%;
+    --gradient-start: 262 83% 58%;
+    --gradient-end: 250 70% 52%;
+    
+    --glass-border: 220 13% 88%;
+    --glass-bg: 0 0% 100%;
+    --glass-glow: 262 83% 58%;
+    --shadow-elegant: 262 50% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 270 90% 65%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 262 70% 20%;
+    --accent-foreground: 262 83% 85%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 262 83% 58%;
+
+    --gradient-dark-start: 222 47% 7%;
+    --gradient-dark-end: 220 47% 4%;
+    --gradient-start: 262 83% 58%;
+    --gradient-end: 250 70% 52%;
+    
+    --glass-border: 240 5% 26%;
+    --glass-bg: 222 47% 11%;
+    --glass-glow: 262 83% 58%;
+    --shadow-elegant: 262 50% 30%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
+  }
+
+  .glass-card {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--glass-bg) / 0.85) 0%,
+      hsl(var(--glass-bg) / 0.65) 100%
+    );
+    backdrop-filter: blur(32px) saturate(180%);
+    border: 1px solid hsl(var(--glass-border) / 0.25);
+    box-shadow:
+      0 8px 32px hsl(var(--shadow-elegant) / 0.12),
+      0 1px 2px hsl(var(--shadow-elegant) / 0.08),
+      inset 0 1px 0 hsl(0 0% 100% / 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    box-shadow:
+      0 12px 48px hsl(var(--shadow-elegant) / 0.18),
+      0 2px 4px hsl(var(--shadow-elegant) / 0.1),
+      inset 0 1px 0 hsl(0 0% 100% / 0.08);
+    border-color: hsl(var(--glass-border) / 0.35);
+    transform: translateY(-1px);
+  }
+
+  .glass-glow {
+    box-shadow:
+      0 0 32px hsl(var(--glass-glow) / 0.2),
+      0 0 64px hsl(var(--primary-glow) / 0.15),
+      0 8px 32px hsl(var(--shadow-elegant) / 0.12);
+  }
+
+  .bg-gradient-dark {
+    background: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--gradient-start) / 0.15), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 0% 50%, hsl(250 70% 52% / 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 50%, hsl(262 83% 58% / 0.08), transparent),
+      linear-gradient(180deg, hsl(222 47% 7%) 0%, hsl(222 47% 5%) 50%, hsl(220 47% 4%) 100%);
+  }
+
+  .premium-input {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .premium-input:focus {
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+    border-color: hsl(var(--primary));
+  }
+}
