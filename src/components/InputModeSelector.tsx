@@ -22,12 +22,12 @@ export function InputModeSelector() {
             className={cn(
               'flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg transition-all duration-300 font-medium text-sm tracking-tight relative overflow-hidden group',
               isActive
-                ? 'bg-gradient-to-br from-primary to-primary/90 text-primary-foreground shadow-lg shadow-primary/25 scale-[1.02]'
+                ? 'bg-linear-to-br from-primary to-primary/90 text-primary-foreground shadow-lg shadow-primary/25 scale-[1.02]'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted/70'
             )}
           >
             {isActive && (
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-white/10 to-transparent"></div>
             )}
             <Icon className={cn("w-4 h-4 transition-transform", isActive && "scale-110")} />
             <span className="relative">{label}</span>

@@ -221,7 +221,7 @@ export function QrPreview() {
         )}
       </div>
 
-      <div className="aspect-square w-full flex items-center justify-center glass-card rounded-xl p-8 relative overflow-hidden bg-gradient-to-br from-muted/30 to-muted/10">
+      <div className="aspect-square w-full flex items-center justify-center glass-card rounded-xl p-8 relative overflow-hidden bg-linear-to-br from-muted/30 to-muted/10">
         {isGenerating ? (
           <div className="flex flex-col items-center gap-4">
             <div className="relative">
@@ -234,7 +234,7 @@ export function QrPreview() {
           </div>
         ) : !isValid ? (
           <div className="text-center">
-            <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center backdrop-blur-sm border border-muted/30">
+            <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-linear-to-br from-muted/40 to-muted/20 flex items-center justify-center backdrop-blur-xs border border-muted/30">
               <div className="w-10 h-10 border-4 border-muted/60 rounded-lg" />
             </div>
             <p className="text-sm font-medium text-muted-foreground">Enter content to generate QR code</p>

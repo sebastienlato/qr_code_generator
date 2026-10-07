@@ -60,7 +60,7 @@ export function SizeControls() {
                 'px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-300',
                 'glass-card border border-glass-border/30',
                 settings.size === size
-                  ? 'bg-gradient-to-br from-primary to-primary/90 text-primary-foreground shadow-lg shadow-primary/20 scale-105 border-primary/50'
+                  ? 'bg-linear-to-br from-primary to-primary/90 text-primary-foreground shadow-lg shadow-primary/20 scale-105 border-primary/50'
                   : 'hover:bg-muted/60 hover:scale-105 hover:border-glass-border/50'
               )}
             >
