@@ -37,7 +37,7 @@ export default function Home() {
                 <InputModeSelector />
               </div>
 
-              <Separator className="bg-gradient-to-r from-transparent via-glass-border/40 to-transparent" />
+              <Separator className="bg-linear-to-r from-transparent via-glass-border/40 to-transparent" />
 
               <div>
                 <h2 className="text-base font-semibold mb-5 tracking-tight text-foreground/90 flex items-center gap-2">

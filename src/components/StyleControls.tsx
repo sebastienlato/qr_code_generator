@@ -52,7 +52,7 @@ export function StyleControls() {
             <div
               className={cn(
                 'w-10 h-10 rounded-lg border-2 border-glass-border/50 cursor-pointer hover:scale-110 transition-transform',
-                settings.transparentBg && 'bg-gradient-to-br from-gray-200 to-gray-300'
+                settings.transparentBg && 'bg-linear-to-br from-gray-200 to-gray-300'
               )}
               style={{
                 backgroundColor: settings.transparentBg ? 'transparent' : settings.backgroundColor,
